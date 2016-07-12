@@ -10,6 +10,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -27,7 +28,16 @@ public class ListaAlunosActivity extends AppCompatActivity {
 
         listaAlunos = (ListView) findViewById(R.id.lista_alunos);
 
+        listaAlunos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> lista, View item, int position, long id) {
+                Aluno aluno = (Aluno) listaAlunos.getItemAtPosition(position);
 
+                Intent vaiProFormulario = new Intent(ListaAlunosActivity.this, FormularioActivity.class);
+                vaiProFormulario.putExtra("aluno", aluno);
+                startActivity(vaiProFormulario);
+            }
+        });
 
         Button novoAluno = (Button) findViewById(R.id.novo_aluno);
         novoAluno.setOnClickListener(new View.OnClickListener() {

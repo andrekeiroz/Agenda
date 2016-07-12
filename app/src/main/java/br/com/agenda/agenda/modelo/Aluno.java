@@ -1,9 +1,12 @@
 package br.com.agenda.agenda.modelo;
 
+import java.io.Serializable;
+import java.util.Set;
+
 /**
  * Created by andre on 11/07/16.
  */
-public class Aluno {
+public class Aluno implements Serializable{
     private Long id;
     private String nome;
     private String endereco;
