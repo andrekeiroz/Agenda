@@ -1,0 +1,13 @@
+Intent intentWhat = new   Intent(Intent.ACTION_SENDTO, Uri.parse("smsto:996524240"));
+        intentWhat.setType("text/plain");
+        String text = "my txt";
+        intentWhat.setPackage("com.whatsapp"); // so that only Whatsapp reacts and not the chooser
+        intentWhat.putExtra(Intent.EXTRA_TEXT, text);
+        startActivity(intentWhat);
+
+
+        Intent sendIntent = new Intent();
+        sendIntent.setAction(Intent.ACTION_SEND);
+        sendIntent.putExtra(Intent.EXTRA_TEXT, "This is my text to send.");
+        sendIntent.setType("text/plain");
+        sendWhat.setIntent(sendIntent);
