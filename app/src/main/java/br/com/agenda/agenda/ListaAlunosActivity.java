@@ -24,6 +24,7 @@ import br.com.agenda.agenda.adapter.AlunosAdapter;
 import br.com.agenda.agenda.converter.AlunosConverter;
 import br.com.agenda.agenda.dao.AlunoDAO;
 import br.com.agenda.agenda.modelo.Aluno;
+import br.com.agenda.agenda.modelo.Prova;
 
 public class ListaAlunosActivity extends AppCompatActivity {
 
@@ -72,6 +73,17 @@ public class ListaAlunosActivity extends AppCompatActivity {
             case R.id.enviar_notas:
                 new EnviaAlunosTask(this).execute();
                 break;
+
+            case R.id.baixar_provas:
+                Intent vaiParaProvas = new Intent(this, ProvasActivity.class);
+                startActivity(vaiParaProvas);
+                break;
+
+            case R.id.menu_mapa:
+                Intent vaiParaMapa = new Intent(this, MapaActivity.class);
+                startActivity(vaiParaMapa);
+                break;
+
         }
         return super.onOptionsItemSelected(item);
     }
